@@ -1,9 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="CubeMesh" id=1]
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.898039, 0.972549, 0.364706, 1 )
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="Environment" id=3]
 background_mode = 3
@@ -16,14 +13,11 @@ glow_enabled = true
 
 [node name="Spatial" type="Spatial"]
 
-[node name="TestCube" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121098, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.0726811, 0, 0.997355, 0, 1, 0, -0.997355, 0, 0.0726811, 4.11504, 0.9777, 0.320778 )
+transform = Transform( 0.999812, 4.65574e-10, -0.0193718, 0.00402697, 0.978155, 0.207839, 0.0189486, -0.207878, 0.977971, -0.62677, 5.96644, 12.8714 )
 environment = SubResource( 3 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1839, 1.23133, 2.26278 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
