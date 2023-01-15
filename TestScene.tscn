@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.898039, 0.972549, 0.364706, 1 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 3
+background_color = Color( 0.282353, 0.729412, 0.905882, 1 )
+background_energy = 0.0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.54
+fog_enabled = true
+glow_enabled = true
+
+[node name="Spatial" type="Spatial"]
+
+[node name="TestCube" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121098, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.0726811, 0, 0.997355, 0, 1, 0, -0.997355, 0, 0.0726811, 4.11504, 0.9777, 0.320778 )
+environment = SubResource( 3 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1839, 1.23133, 2.26278 )
